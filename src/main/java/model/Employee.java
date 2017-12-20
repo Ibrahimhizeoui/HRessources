@@ -18,8 +18,8 @@ public class Employee {
 	private int id;
 	private String firstName;
 	private String lastName;
-	private Contact contact;
-	private Address address;
+	//private Contact contact;
+	//private Address address;
 	private Date created_at;
 	private Date updated_at;
 	public Employee() {
@@ -37,7 +37,7 @@ public class Employee {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public Contact getContact() {
+	/*public Contact getContact() {
 		return contact;
 	}
 	public void setContact(Contact contact) {
@@ -48,7 +48,7 @@ public class Employee {
 	}
 	public void setAddress(Address address) {
 		this.address = address;
-	}
+	}*/
 	public Date getCreated_at() {
 		return created_at;
 	}

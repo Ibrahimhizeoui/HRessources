@@ -95,12 +95,7 @@
      <!-- servelet/jstl -->
      
      <!-- JPA -->
-     		<dependency>
- 				<groupId>org.eclipse.persistence</groupId>
-  				<artifactId>org.eclipse.persistence.jpa</artifactId>
-  				<version>2.5.1</version>
-  				<scope>provided</scope>
-			</dependency>
+     		
 			<dependency>
   				<groupId>org.eclipse.persistence</groupId>
   				<artifactId>javax.persistence</artifactId>
