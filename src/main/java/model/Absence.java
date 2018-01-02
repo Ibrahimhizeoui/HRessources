@@ -5,15 +5,13 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
-
 @Entity
-@Table
+@Table(name="absences")
 public class Absence {
 
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
