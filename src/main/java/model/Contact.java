@@ -1,9 +1,11 @@
 package model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -14,48 +16,19 @@ public class Contact {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private String fistName;
-	private String lastName;
 	private String email;
 	private String phone;
-	
+	@OneToOne(fetch=FetchType.EAGER)
+	private Employee employee;
 	public Contact() {}
 	
 	public int getId() {
 		return id;
 	}
 
-
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
-
-	public String getFistName() {
-		return fistName;
-	}
-
-
-
-	public void setFistName(String fistName) {
-		this.fistName = fistName;
-	}
-
-
-
-	public String getLastName() {
-		return lastName;
-	}
-
-
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-
 
 	public String getEmail() {
 		return email;
@@ -70,4 +43,16 @@ public class Contact {
 		this.phone = phone;
 	}
 
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	@Override
+	public String toString() {
+		return "Contact [id=" + id + ", email=" + email + ", phone=" + phone + "]";
+	}
 }

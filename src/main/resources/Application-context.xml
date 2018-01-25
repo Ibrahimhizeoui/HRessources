@@ -31,6 +31,7 @@
 			    <prop key="hibernate.id.new_generator_mappings">false</prop>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
 	</bean>
@@ -48,7 +49,22 @@
 	<jpa:repositories base-package="repositories" />
 	
 
+   <bean id="absence" class="model.Absence"></bean>
+   <bean id="absencedao" class="dao.AbsenceDao" ></bean>
+   
+   <bean id="activity" class="model.Activity"></bean>
+   <bean id="activitydao" class="dao.ActivityDao" ></bean>
+   
+   <bean id="address" class="model.Address"></bean>
+   <bean id="addressdao" class="dao.AddressDao" ></bean>
+   
+   <bean id="contact" class="model.Contact"></bean>
+   <bean id="contactdao" class="dao.ContactDao" ></bean>
+   
    <bean id="employee" class="model.Employee"></bean>
-   <bean id="employeedao" class="repositories.EmployeeDao" autowire="byName"></bean>
+   <bean id="employeedao" class="dao.EmployeeDao" ></bean>
+   
+   <bean id="position" class="model.Position"></bean>
+   <bean id="positiondao" class="dao.PositionDao" ></bean>
 	 
  </beans>

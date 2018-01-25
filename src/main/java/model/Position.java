@@ -1,11 +1,14 @@
 package model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -21,6 +24,8 @@ public class Position {
 	private Date createdAt;
 	private Date beginAt;
 	private Date endAt;
+	@OneToMany(mappedBy="position", fetch=FetchType.EAGER)
+	private List<Employee> employees;
 	private boolean enabled;
 	
 	public Position() {}
@@ -68,5 +73,21 @@ public class Position {
 	public void setEndAt(Date endAt) {
 		this.endAt = endAt;
 	}
+
+	public List<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(List<Employee> employees) {
+		this.employees = employees;
+	}
+
+	@Override
+	public String toString() {
+		return "Position [id=" + id + ", name=" + name + ", description=" + description + ", createdAt=" + createdAt
+				+ ", beginAt=" + beginAt + ", endAt=" + endAt + ", employees=" + employees + ", enabled=" + enabled
+				+ "]";
+	}
+	
 	
 }
